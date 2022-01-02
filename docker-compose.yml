@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis
+    restart: "no"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data:/data
+    ports:
+      - "127.0.0.1:6380:6379"
